@@ -1,7 +1,3 @@
-Here’s the updated README with the mention of SerpAPI and the `.env.local` setup. Below that is the markdown version for easy copy-pasting!
-
----
-
 # Roogle 🦉
 *Because who needs Google when you have Reddit's brutally honest opinions?*
 

@@ -8,6 +8,18 @@ import Link from "next/link"
 import { RoogleSearch } from "@/app/actions";
 import { useSearchParams } from 'next/navigation'
 
+interface SearchResult {
+    title: string
+    link: string
+    displayLink: string
+    snippet: string
+    pagemap: {
+        cse_thumbnail: {
+            src: string
+        }
+    }
+}
+
 function SkeletonLoader() {
   return (
     <div>
@@ -29,7 +41,7 @@ function SkeletonLoader() {
 export function AppSearchPage() {
   const searchParams = useSearchParams()
   const [query, setQuery] = useState(searchParams.get('q') || '')
-  const [results, setResults] = useState([])
+  const [results, setResults] = useState<SearchResult[]>([])
   const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
@@ -117,7 +129,7 @@ export function AppSearchPage() {
         <div className="w-1/3 border-l border-[#343536] pl-8">
           <div className="bg-[#272729] p-4 rounded-lg">
             <h2 className="text-xl mb-2">Roogle</h2>
-            <p className="text-sm mb-2">Roogle is a fictional search engine created as a dark-themed clone of Google, combining elements of Google's layout with Reddit's magical answers.</p>
+            <p className="text-sm mb-2">Roogle is a fictional search engine created as a dark-themed clone of Google, combining elements of Google&apos;s layout with Reddit&apos;s magical answers.</p>
             {/*<img src="/placeholder.svg?height=150&width=250" alt="Roogle logo" className="w-full mb-2 rounded" />*/}
             <div className="text-sm">
               <p><strong>Founded:</strong> 2024</p>

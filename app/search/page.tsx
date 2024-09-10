@@ -1,7 +1,10 @@
 import {AppSearchPage} from "@/components/app-search-page";
+import {Suspense} from "react";
 
 export default function Search() {
     return (
-        <AppSearchPage />
+        <Suspense>
+            <AppSearchPage />
+        </Suspense>
     );
 }
